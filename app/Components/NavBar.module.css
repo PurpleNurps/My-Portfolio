@@ -4,39 +4,51 @@
     position: fixed;
     top: 0;
     width: 100%;
-    overflow: hidden;
     height: 10vh;
     color:aliceblue;
     background-color: #023047;
 }
 
 .logo {
-    display:flex;
+    display: flex;
     background-color: white;
-    width:fit-content;
+    width: fit-content;
     padding: 8px;
     padding-right: 15px;
     border-radius: 8px;
     margin: 18px;
 }
 
-/* .burger {
-    background-color: #FF6B35;
-    height: 8px;
-    width: 50px;
-    margin: 10px;
-    border-radius: 3px;
-} */
-
-/* .burger_container {
-    margin-bottom: 15px;
-} */
-
 .open {
     /* so open is available */
 }
 
-.nav_icon1, .nav_icon2, .nav_icon3, .nav_icon4 {
+.menu {
+    /* so menu is available */
+}
+
+.burger_container {
+  position: absolute;
+  right: 0;
+}
+
+.menu.open {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 600px;
+  width: 300px;
+  background-color: rgb(248, 241, 241);
+}
+
+.closed {
+  position: absolute;
+  opacity: 0;
+}
+
+.nav_icon1 {
     width: 60px;
     height: 45px;
     position: relative;
@@ -52,7 +64,7 @@
     cursor: pointer;
   }
   
-  .nav_icon1 span, .nav_icon3 span, .nav_icon4 span {
+  .nav_icon1 span {
     display: block;
     position: absolute;
     height: 8px;
