@@ -18,7 +18,7 @@ export default function NavBar() {
         <div className={styles.burger_container}>
           <div
             className={
-              isOpen ? `${styles.nav_icon1} ${styles.open}` : styles.nav_icon1
+              isOpen ? `${styles.nav_icon1} ${styles.open} noSelect` : `${styles.nav_icon1} noSelect`
             }
             onClick={() => toggleOpen()}
           >
@@ -31,8 +31,8 @@ export default function NavBar() {
       <div className={isOpen ? `${styles.menu} ${styles.open}` : styles.closed}>
         <div className={styles.top_menu_flex}>
           <div className={styles.input_wrap}>
-            <input id={styles.input} type="checkbox"/>
-              <label for={styles.input} id={styles.input_label}>Select</label>
+            <input className="noSelect" id={styles.input} type="checkbox"/>
+              <label className="noSelect" for={styles.input} id={styles.input_label}>Select</label>
           </div>
           {/* <span className={styles.toggle}>
             <span className={styles.toggle_switch}></span>
@@ -40,7 +40,7 @@ export default function NavBar() {
           <div className={styles.burger_container}>
             <div
               className={
-                isOpen ? `${styles.nav_icon1} ${styles.open}` : styles.nav_icon1
+                isOpen ? `${styles.nav_icon1} ${styles.open} noSelect` : `${styles.nav_icon1} noSelect`
               }
               onClick={() => toggleOpen()}
             >
