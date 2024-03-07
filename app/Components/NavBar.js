@@ -13,7 +13,7 @@ export default function NavBar() {
     <>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Image src="/logo.png" width={130} height={40} />
+          <Image src="/logo.png" width={130} height={40} alt="logo"/>
         </div>
         <div className={styles.burger_container}>
           <div

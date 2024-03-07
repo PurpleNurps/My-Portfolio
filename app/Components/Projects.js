@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import SampleImage from "../../public/vercel.svg"
+import SampleImage from "/public/vercel.svg"
 
 export default function Projects() {
     return (
