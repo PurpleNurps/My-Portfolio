@@ -35,8 +35,6 @@
 }
 
 .menu.open {
-  display: flex;
-  justify-content: flex-end;
   position: absolute;
   top: 0;
   right: 0;
@@ -44,6 +42,82 @@
   width: 300px;
   background-color: #212529;
 }
+
+.top_menu_flex {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.input_wrap {
+
+}
+
+#input {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  bottom: 0;
+}
+
+#input_label {
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+  height: 44px;
+  width: 99px;
+  cursor: pointer;
+  font-size: 0;
+  color: transparent;
+  border-radius: 22px;
+  background-color: #264653;
+  transition: background-color 500ms ease;
+}
+
+#input_label:after {
+  content: '';
+  display: block;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 2px;
+  right: 56px;
+  border-radius: 50%;
+  background-color: #FF6B35;
+  box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.15);
+  transition: right 500ms ease,
+    background-color 500ms ease,
+    box-shadow 500ms ease;
+}
+
+#input:checked +  #input_label {
+  background: #F4A261;
+}
+
+#input:checked + #input_label::after {
+  background: #023047;
+  right: 2px;
+  box-shadow: -2px 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* .toggle {
+  width: 70px;
+  height: 30px;
+  margin: 30px;
+  border-radius: 50px;
+  background-color: #264653;
+}
+
+.toggle_switch {
+  margin: 2.5px;
+  position: absolute;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  background-color: #FF6B35;
+} */
 
 .closed {
   position: absolute;
@@ -69,7 +143,7 @@
   .nav_icon1 span {
     display: block;
     position: absolute;
-    height: 8px;
+    height: 6px;
     width: 100%;
     background: #FF6B35;
     border-radius: 9px;

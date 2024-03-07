@@ -13,7 +13,7 @@ export default function NavBar() {
     <>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Image src="/logo.png" width={130} height={40} alt="logo"/>
+          <Image src="/logo.png" width={130} height={40} alt="logo" />
         </div>
         <div className={styles.burger_container}>
           <div
@@ -28,19 +28,26 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-      <div
-        className={isOpen ? `${styles.menu} ${styles.open}` : styles.closed}
-      >
-        <div className={styles.burger_container}>
-          <div
-            className={
-              isOpen ? `${styles.nav_icon1} ${styles.open}` : styles.nav_icon1
-            }
-            onClick={() => toggleOpen()}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
+      <div className={isOpen ? `${styles.menu} ${styles.open}` : styles.closed}>
+        <div className={styles.top_menu_flex}>
+          <div className={styles.input_wrap}>
+            <input id={styles.input} type="checkbox"/>
+              <label for={styles.input} id={styles.input_label}>Select</label>
+          </div>
+          {/* <span className={styles.toggle}>
+            <span className={styles.toggle_switch}></span>
+          </span> */}
+          <div className={styles.burger_container}>
+            <div
+              className={
+                isOpen ? `${styles.nav_icon1} ${styles.open}` : styles.nav_icon1
+              }
+              onClick={() => toggleOpen()}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </div>
       </div>
