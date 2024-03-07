@@ -29,10 +29,12 @@
     /* so menu is available */
 }
 
-.burger_container {
+/* .menu_link {
   position: absolute;
+  bottom:0;
   right: 0;
-}
+  font-size: x-large;
+} */
 
 .menu.open {
   position: absolute;
@@ -47,10 +49,6 @@
   display: flex;
   justify-content: space-between;
   height: 100px;
-}
-
-.input_wrap {
-
 }
 
 #input {
