@@ -29,26 +29,40 @@
     /* so menu is available */
 }
 
-/* .menu_link {
-  position: absolute;
-  bottom:0;
-  right: 0;
-  font-size: x-large;
-} */
+.menu_link {
+  margin-right: 30px;
+  margin-top: 50px;
+  display: block;
+  font-size: 40px;
+  text-align: right;
+}
+
+.menu_image {
+  margin: 30px 10px;
+}
 
 .menu.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   right: 0;
   height: 600px;
   width: 300px;
   background-color: #212529;
+  transition: opacity 500ms ease;
 }
 
 .top_menu_flex {
   display: flex;
   justify-content: space-between;
   height: 100px;
+}
+
+.bottom_menu_flex {
+  display: flex;
+  justify-content: center;
 }
 
 #input {
@@ -102,6 +116,7 @@
 .closed {
   position: absolute;
   opacity: 0;
+  pointer-events: none;
 }
 
 .nav_icon1 {

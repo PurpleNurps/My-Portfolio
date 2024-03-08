@@ -54,8 +54,14 @@ export default function NavBar() {
             <span></span>
           </div>
         </div>
+        <div>
         <Link className={styles.menu_link} href="https://www.google.com"><strong>CV</strong></Link><br></br>
         <Link className={styles.menu_link} href="/projects"><strong>Projects</strong></Link>
+        </div>
+        <div className={styles.bottom_menu_flex}>
+          <Link href="https://www.linkedin.com/in/sean-lunt-028484b8/"><Image className={styles.menu_image} src="/orange-linkedin.svg" width={100} height={100} alt="linkedin logo"/></Link>
+          <Link href="https://github.com/PurpleNurps"><Image className={styles.menu_image} src="/orange-github.svg" width={100} height={100} alt="github logo"/></Link>
+        </div>
       </div>
     </>
   );
