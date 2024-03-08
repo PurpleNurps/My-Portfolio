@@ -55,7 +55,7 @@ export default function NavBar() {
           </div>
         </div>
         <div>
-        <Link className={styles.menu_link} href="https://www.google.com"><strong>CV</strong></Link><br></br>
+        <Link className={styles.menu_link} href="https://drive.google.com/file/d/17qvcNgscGngXS4Jg71yMfq0DRxKXVcnq/view?usp=sharing"><strong>CV</strong></Link><br></br>
         <Link className={styles.menu_link} href="/projects"><strong>Projects</strong></Link>
         </div>
         <div className={styles.bottom_menu_flex}>
