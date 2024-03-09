@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Header from "./Components/Header.js"
 import Bio from "./Components/Bio.js"
 import TechStack from "./Components/TechStack.js"
@@ -10,13 +10,14 @@ import NavBar from "./Components/NavBar.js"
 
 export default function Home() {
 
+  const [isChecked, setIsChecked] = useState(false);
   let prefersDarkMode = false;
 
-  if (typeof window !== 'undefined') {
-    prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsChecked(prefersDarkMode);
+  }, []);
 
-  const [isChecked, setIsChecked] = useState(prefersDarkMode);
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
