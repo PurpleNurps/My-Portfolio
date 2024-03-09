@@ -10,12 +10,10 @@ export default function Home() {
   const [isChecked, setIsChecked] = useState(false);
 
 
-    if (typeof window !== "undefined") {
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setIsChecked(prefersDarkMode);
-    }
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsChecked(prefersDarkMode);
+  }, []);
 
 
   const handleCheckboxChange = (event) => {
