@@ -21,7 +21,6 @@ export default function Home() {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
 
-    if (typeof document !== "undefined") {
       const root = document.documentElement;
 
       if (isChecked) {
@@ -37,7 +36,6 @@ export default function Home() {
         root.style.setProperty("--darkBackground", "#023047");
         // ... set the rest of the dark mode variables ...
       }
-    }
   };
 
   return (
