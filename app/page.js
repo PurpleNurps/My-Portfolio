@@ -10,9 +10,11 @@ import NavBar from "./Components/NavBar.js"
 
 export default function Home() {
 
-  const prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
+  let prefersDarkMode = false;
+
+  if (typeof window !== 'undefined') {
+    prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
 
   const [isChecked, setIsChecked] = useState(prefersDarkMode);
 
