@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Components/Header.js";
 import Bio from "./Components/Bio.js";
 import TechStack from "./Components/TechStack.js";
