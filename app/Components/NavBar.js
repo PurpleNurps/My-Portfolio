@@ -56,18 +56,18 @@ export default function NavBar({ onCheckboxChange, isChecked }) {
         </div>
         <div>
           <Link
-            className={styles.menu_link}
+            className={`${styles.menu_link} noSelect`}
             href="https://drive.google.com/file/d/17qvcNgscGngXS4Jg71yMfq0DRxKXVcnq/view?usp=sharing"
           >
             <strong>CV</strong>
           </Link>
           <br></br>
-          <Link className={styles.menu_link} href="/projects">
+          <Link className={`${styles.menu_link} noSelect`} href="/projects">
             <strong>Projects</strong>
           </Link>
         </div>
         <div className={styles.bottom_menu_flex}>
-          <Link href="https://www.linkedin.com/in/sean-lunt-028484b8/">
+          <Link className="noSelect" href="https://www.linkedin.com/in/sean-lunt-028484b8/">
             <Image
               className={styles.menu_image}
               src={isChecked ? "/orange-linkedin.svg" : "/blue-linkedin.svg"}
@@ -76,7 +76,7 @@ export default function NavBar({ onCheckboxChange, isChecked }) {
               alt="linkedin logo"
             />
           </Link>
-          <Link href="https://github.com/PurpleNurps">
+          <Link className="noSelect" href="https://github.com/PurpleNurps">
             <Image
               className={styles.menu_image}
               src={isChecked ? "/orange-github.svg" : "/blue-github.svg"}

@@ -29,11 +29,27 @@
 }
 
 .menu_link {
+  position: relative;
   margin-right: 30px;
   margin-top: 50px;
   display: block;
   font-size: 40px;
   text-align: right;
+}
+
+.menu_link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--foreground); /* Change to desired underline color */
+  transition: width .3s;
+}
+
+.menu_link:hover::after {
+  width: 100%;
 }
 
 .menu_image {

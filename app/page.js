@@ -14,7 +14,7 @@ export default function Home() {
     "(prefers-color-scheme: dark)"
   ).matches;
 
-  const [isChecked, setIsChecked] = useState(!prefersDarkMode);
+  const [isChecked, setIsChecked] = useState(prefersDarkMode);
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
