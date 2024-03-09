@@ -9,14 +9,14 @@ import NavBar from "./Components/NavBar.js";
 export default function Home() {
   const [isChecked, setIsChecked] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const prefersDarkMode = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setIsChecked(prefersDarkMode);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     const prefersDarkMode = window.matchMedia(
+  //       "(prefers-color-scheme: dark)"
+  //     ).matches;
+  //     setIsChecked(prefersDarkMode);
+  //   }
+  // }, []);
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
