@@ -19,21 +19,21 @@ export default function Home() {
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
 
-      const root = document.documentElement;
+    const root = document.documentElement;
 
-      if (isChecked) {
-        root.style.setProperty("--foreground", "#023047");
-        root.style.setProperty("--background", "#F4A261");
-        root.style.setProperty("--menu", "#F8F9FA");
-        root.style.setProperty("--darkBackground", "#FF6B35");
-        // ... set the rest of the light mode variables ...
-      } else {
-        root.style.setProperty("--foreground", "#FF6B35");
-        root.style.setProperty("--background", "#264653");
-        root.style.setProperty("--menu", "#212529");
-        root.style.setProperty("--darkBackground", "#023047");
-        // ... set the rest of the dark mode variables ...
-      }
+    if (isChecked) {
+      root.style.setProperty("--foreground", "#FF6B35");
+      root.style.setProperty("--background", "#264653");
+      root.style.setProperty("--menu", "#212529");
+      root.style.setProperty("--darkBackground", "#023047");
+      // ... set the rest of the dark mode variables ...
+    } else {
+      root.style.setProperty("--foreground", "#023047");
+      root.style.setProperty("--background", "#F4A261");
+      root.style.setProperty("--menu", "#F8F9FA");
+      root.style.setProperty("--darkBackground", "#FF6B35");
+      // ... set the rest of the light mode variables ...
+    };
   };
 
   return (

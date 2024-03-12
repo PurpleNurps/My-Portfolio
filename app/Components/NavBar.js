@@ -70,7 +70,7 @@ export default function NavBar({ onCheckboxChange, isChecked }) {
           <Link className="noSelect" href="https://www.linkedin.com/in/sean-lunt-028484b8/">
             <Image
               className={styles.menu_image}
-              src={isChecked ? "/orange-linkedin.svg" : "/blue-linkedin.svg"}
+              src={isChecked ?  "/blue-linkedin.svg" : "/orange-linkedin.svg"}
               width={100}
               height={100}
               alt="linkedin logo"
@@ -79,7 +79,7 @@ export default function NavBar({ onCheckboxChange, isChecked }) {
           <Link className="noSelect" href="https://github.com/PurpleNurps">
             <Image
               className={styles.menu_image}
-              src={isChecked ? "/orange-github.svg" : "/blue-github.svg"}
+              src={isChecked ? "/blue-github.svg" : "/orange-github.svg"}
               width={100}
               height={100}
               alt="github logo"
