@@ -2,9 +2,17 @@ import { useState } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
-export default function NavBar({ onCheckboxChange, isChecked }) {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme()
+  const [isChecked, setIsChecked] = useState(theme !== 'dark')
+
+  const onCheckboxChange = (event) => {
+    setIsChecked(event.target.checked)
+    setTheme(isChecked ? 'dark' : 'light')
+  }
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
