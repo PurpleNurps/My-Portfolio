@@ -25,7 +25,13 @@ export default function NavBar() {
     useEffect(() => {
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
       if (!theme) {
-        prefersDarkMode ? setTheme('dark') && setIsChecked(false) : setTheme('light') && setIsChecked(true);
+        if (prefersDarkMode) {
+          setTheme('dark');
+          setIsChecked(false);
+        } else {
+          setTheme('light');
+          setIsChecked(true);
+        }
       } else if (theme === 'light') {
         setIsChecked(true)
       } else {
