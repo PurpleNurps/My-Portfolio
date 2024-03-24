@@ -10,8 +10,21 @@ export default function NavBar() {
   const [isChecked, setIsChecked] = useState(false)
 
   useEffect(() => {
-    setIsChecked(theme === 'light');
-  }, [theme])
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (!theme) {
+      if (prefersDarkMode) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme) {
+      setIsChecked(theme === 'light');
+    }
+  }, [theme]);
 
   const onCheckboxChange = (event) => {
     setIsChecked(event.target.checked)
@@ -22,22 +35,22 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
-    useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (!theme) {
-        if (prefersDarkMode) {
-          setTheme('dark');
-          setIsChecked(false);
-        } else {
-          setTheme('light');
-          setIsChecked(true);
-        }
-      } else if (theme === 'light') {
-        setIsChecked(true)
-      } else {
-        setIsChecked(false)
-      }
-  }, []);
+  //   useEffect(() => {
+  //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  //     if (!theme) {
+  //       if (prefersDarkMode) {
+  //         setTheme('dark');
+  //         setIsChecked(false);
+  //       } else {
+  //         setTheme('light');
+  //         setIsChecked(true);
+  //       }
+  //     } else if (theme === 'light') {
+  //       setIsChecked(true)
+  //     } else {
+  //       setIsChecked(false)
+  //     }
+  // }, []);
 
   return (
     <>
