@@ -7,9 +7,9 @@ import { useTheme } from "next-themes";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isChecked, setIsChecked] = useState(false)
   const prefersDarkMode = typeof window !== 'undefined' && window.matchMedia("(prefers-color-scheme: dark)").matches;
   const { theme, setTheme } = useTheme(prefersDarkMode ? 'dark' : 'light')
+  const [isChecked, setIsChecked] = useState(theme === 'light')
 
   // useEffect(() => {
   //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
