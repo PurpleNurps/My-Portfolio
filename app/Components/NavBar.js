@@ -11,7 +11,7 @@ export default function NavBar() {
     typeof window !== "undefined" &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
   const { theme, setTheme } = useTheme(prefersDarkMode ? "dark" : "light");
-  const [isChecked, setIsChecked] = useState(theme === "light");
+  const [isChecked, setIsChecked] = useState(!prefersDarkMode);
   console.log(theme);
   console.log(isChecked);
 
@@ -27,11 +27,30 @@ export default function NavBar() {
         src = "/orange-linkedin.svg";
         break;
       default:
-        src = "/next.svg";
+        src = "/orange-linkedin.svg";
         break;
     }
-    return <Image src={src} width={100} height={100} alt="linkedin logo" className={styles.menu_image}/>;
+    return <Image src={src} width={100} height={100} alt="LinkedIn logo" className={styles.menu_image}/>;
   }
+
+  function GitHubImage() {
+    const { resolvedTheme } = useTheme();
+    let src;
+
+    switch (resolvedTheme) {
+      case "light":
+        src = "/blue-github.svg";
+        break;
+      case "dark":
+        src = "/orange-github.svg";
+        break;
+      default:
+        src = "/orange-github.svg";
+        break;
+    }
+    return <Image src={src} width={100} height={100} alt="GitHub logo" className={styles.menu_image}/>;
+  }
+
 
   // useEffect(() => {
   //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -146,13 +165,7 @@ export default function NavBar() {
             <LinkedInImage />
           </Link>
           <Link className="noSelect" href="https://github.com/PurpleNurps">
-            <Image
-              className={styles.menu_image}
-              src={isChecked ? "/blue-github.svg" : "/orange-github.svg"}
-              width={100}
-              height={100}
-              alt="github logo"
-            />
+            <GitHubImage />
           </Link>
         </div>
       </div>
