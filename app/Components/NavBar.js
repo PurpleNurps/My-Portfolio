@@ -76,7 +76,7 @@ export default function NavBar() {
       <div className={isOpen ? `${styles.menu} ${styles.open}` : styles.closed}>
         <div className={styles.top_menu_flex}>
           <div className={styles.input_wrap}>
-            <input className="noSelect" id={styles.input} type="checkbox" onChange={onCheckboxChange} checked={isChecked} />
+            <input className="noSelect" id={styles.input} type="checkbox" onChange={onCheckboxChange} defaultChecked={isChecked} />
             <label
               className="noSelect"
               htmlFor={styles.input}
