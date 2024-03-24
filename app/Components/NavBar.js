@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
@@ -6,19 +7,20 @@ import { useTheme } from "next-themes";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme()
   const [isChecked, setIsChecked] = useState(false)
+  const prefersDarkMode = typeof window !== 'undefined' && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const { theme, setTheme } = useTheme(prefersDarkMode ? 'dark' : 'light')
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (!theme) {
-      if (prefersDarkMode) {
-        setTheme('dark');
-      } else {
-        setTheme('light');
-      }
-    }
-  }, []);
+  // useEffect(() => {
+  //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  //   if (!theme) {
+  //     if (prefersDarkMode) {
+  //       setTheme('dark');
+  //     } else {
+  //       setTheme('light');
+  //     }
+  //   }
+  // }, []);
 
   useEffect(() => {
     if (theme) {
