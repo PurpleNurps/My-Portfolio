@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
@@ -7,9 +7,31 @@ import { useTheme } from "next-themes";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const prefersDarkMode = typeof window !== 'undefined' && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const { theme, setTheme } = useTheme(prefersDarkMode ? 'dark' : 'light')
-  const [isChecked, setIsChecked] = useState(theme === 'light')
+  const prefersDarkMode =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const { theme, setTheme } = useTheme(prefersDarkMode ? "dark" : "light");
+  const [isChecked, setIsChecked] = useState(theme === "light");
+  console.log(theme);
+  console.log(isChecked);
+
+  function LinkedInImage() {
+    const { resolvedTheme } = useTheme();
+    let src;
+
+    switch (resolvedTheme) {
+      case "light":
+        src = "/blue-linkedin.svg";
+        break;
+      case "dark":
+        src = "/orange-linkedin.svg";
+        break;
+      default:
+        src = "/next.svg";
+        break;
+    }
+    return <Image src={src} width={100} height={100} alt="linkedin logo" className={styles.menu_image}/>;
+  }
 
   // useEffect(() => {
   //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -24,14 +46,14 @@ export default function NavBar() {
 
   useEffect(() => {
     if (theme) {
-      setIsChecked(theme === 'light');
+      setIsChecked(theme === "light");
     }
   }, [theme]);
 
   const onCheckboxChange = (event) => {
-    setIsChecked(event.target.checked)
-    setTheme(event.target.checked ? 'light' : 'dark')
-  }
+    setIsChecked(event.target.checked);
+    setTheme(event.target.checked ? "light" : "dark");
+  };
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
@@ -76,7 +98,13 @@ export default function NavBar() {
       <div className={isOpen ? `${styles.menu} ${styles.open}` : styles.closed}>
         <div className={styles.top_menu_flex}>
           <div className={styles.input_wrap}>
-            <input className="noSelect" id={styles.input} type="checkbox" onChange={onCheckboxChange} defaultChecked={isChecked} />
+            <input
+              className="noSelect"
+              id={styles.input}
+              type="checkbox"
+              onChange={onCheckboxChange}
+              checked={isChecked}
+            />
             <label
               className="noSelect"
               htmlFor={styles.input}
@@ -111,14 +139,11 @@ export default function NavBar() {
           </Link>
         </div>
         <div className={styles.bottom_menu_flex}>
-          <Link className="noSelect" href="https://www.linkedin.com/in/sean-lunt-028484b8/">
-            <Image
-              className={styles.menu_image}
-              src={isChecked ?  "/blue-linkedin.svg" : "/orange-linkedin.svg"}
-              width={100}
-              height={100}
-              alt="linkedin logo"
-            />
+          <Link
+            className="noSelect"
+            href="https://www.linkedin.com/in/sean-lunt-028484b8/"
+          >
+            <LinkedInImage />
           </Link>
           <Link className="noSelect" href="https://github.com/PurpleNurps">
             <Image
