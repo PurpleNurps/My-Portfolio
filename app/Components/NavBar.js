@@ -12,8 +12,7 @@ export default function NavBar() {
     window.matchMedia("(prefers-color-scheme: dark)").matches;
   const { theme, setTheme } = useTheme(prefersDarkMode ? "dark" : "light");
   const [isChecked, setIsChecked] = useState(!prefersDarkMode);
-  console.log(theme);
-  console.log(isChecked);
+  console.log(isChecked)
 
   function LinkedInImage() {
     const { resolvedTheme } = useTheme();
