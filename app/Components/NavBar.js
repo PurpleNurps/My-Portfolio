@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,16 +7,31 @@ import { useTheme } from "next-themes";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme()
-  const [isChecked, setIsChecked] = useState(theme !== 'dark')
+  const [isChecked, setIsChecked] = useState(false)
+
+  useEffect(() => {
+    setIsChecked(theme === 'light');
+  }, [theme])
 
   const onCheckboxChange = (event) => {
     setIsChecked(event.target.checked)
-    setTheme(isChecked ? 'dark' : 'light')
+    setTheme(event.target.checked ? 'light' : 'dark')
   }
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
+
+    useEffect(() => {
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (!theme) {
+        prefersDarkMode ? setTheme('dark') : setTheme('light');
+      } else if (theme === 'light') {
+        setIsChecked(true)
+      } else {
+        setIsChecked(false)
+      }
+  }, []);
 
   return (
     <>
