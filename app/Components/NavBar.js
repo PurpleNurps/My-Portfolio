@@ -63,7 +63,7 @@ export default function NavBar() {
   // }, []);
 
   useEffect(() => {
-    if (theme) {
+    if (theme !== "system") {
       setIsChecked(theme === "light");
     }
   }, [theme]);
