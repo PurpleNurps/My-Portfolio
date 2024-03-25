@@ -99,7 +99,7 @@
   font-size: 0;
   color: transparent;
   border-radius: 22px;
-  background-color: #264653;
+  background-color: #212529;
   transition: background-color 500ms ease;
 }
 
@@ -120,7 +120,7 @@
 }
 
 #input:checked +  #input_label {
-  background: #F4A261;
+  background: #F8F9FA;
 }
 
 #input:checked + #input_label::after {

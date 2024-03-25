@@ -6,9 +6,9 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground: #023047;
-  --background: #F4A261;
+  --background: #F8F9FA;
   --darkBackground: #FF6B35;
-  --menu: #F8F9FA;
+  --menu: #F4A261;
 
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
@@ -44,9 +44,9 @@
 [data-theme='dark'] {
   /* :root { */
     --foreground: #FF6B35;
-    --background: #264653;
+    --background: #212529;
     --darkBackground: #023047;
-    --menu: #212529;
+    --menu: #264653;
   }
 
     /* --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
