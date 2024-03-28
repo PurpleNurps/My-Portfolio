@@ -7,6 +7,7 @@
     height: 10vh;
     min-height: 95px;;
     background-color: var(--darkBackground);
+    z-index: 1;
 }
 
 .logo {
@@ -25,6 +26,7 @@
 }
 
 .menu {
+  z-index: 2;
     /* so menu is available */
 }
 
