@@ -105,5 +105,5 @@ export default function Header({ theme }) {
     );
   }
 
-  return <></>;
+  return <header></header>;
 }
