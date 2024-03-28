@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-export default function Header() {
+export default function Header({ theme }) {
   const [init, setInit] = useState(false);
 
   // this should be run only once per application lifetime
@@ -28,11 +28,9 @@ export default function Header() {
 
   const options = useMemo(
     () => ({
-    //   background: {
-    //     color: {
-    //       value: "#0d47a1",
-    //     },
-    //   },
+      fullScreen: {
+        enable: false,
+      },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -54,10 +52,10 @@ export default function Header() {
       },
       particles: {
         color: {
-          value: "#FF6B35",
+          value: theme === "dark" ? "#FF6B35" : "#023047",
         },
         links: {
-          color: "#F4A261",
+          color: theme === "dark" ? "#F4A261" : "#264653",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -80,7 +78,7 @@ export default function Header() {
           value: 80,
         },
         opacity: {
-          value: 0.5,
+          value: 1,
         },
         shape: {
           type: "circle",
@@ -91,16 +89,17 @@ export default function Header() {
       },
       detectRetina: true,
     }),
-    []
+    [theme]
   );
 
   if (init) {
     return (
-        <header>
+      <header>
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={options}
+          className={styles.particles}
         />
       </header>
     );

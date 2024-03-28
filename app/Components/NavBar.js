@@ -5,13 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
-export default function NavBar() {
+
+export default function NavBar({theme, setTheme, isChecked, setIsChecked}) {
   const [isOpen, setIsOpen] = useState(false);
-  const prefersDarkMode =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const { theme, setTheme } = useTheme(prefersDarkMode ? "dark" : "light");
-  const [isChecked, setIsChecked] = useState(!prefersDarkMode);
 
   function LinkedInImage() {
     const { resolvedTheme } = useTheme();
@@ -49,18 +45,6 @@ export default function NavBar() {
     return <Image src={src} width={100} height={100} alt="GitHub logo" className={styles.menu_image}/>;
   }
 
-
-  // useEffect(() => {
-  //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  //   if (!theme) {
-  //     if (prefersDarkMode) {
-  //       setTheme('dark');
-  //     } else {
-  //       setTheme('light');
-  //     }
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (theme !== "system") {
       setIsChecked(theme === "light");
@@ -75,23 +59,6 @@ export default function NavBar() {
   const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
-
-  //   useEffect(() => {
-  //   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  //     if (!theme) {
-  //       if (prefersDarkMode) {
-  //         setTheme('dark');
-  //         setIsChecked(false);
-  //       } else {
-  //         setTheme('light');
-  //         setIsChecked(true);
-  //       }
-  //     } else if (theme === 'light') {
-  //       setIsChecked(true)
-  //     } else {
-  //       setIsChecked(false)
-  //     }
-  // }, []);
 
   return (
     <>
