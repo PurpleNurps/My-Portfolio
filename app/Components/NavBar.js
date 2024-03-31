@@ -118,6 +118,13 @@ export default function NavBar({ theme, setTheme, isChecked, setIsChecked }) {
             <strong>CV</strong>
           </Link>
           <br></br>
+          <Link
+            className={`${styles.menu_link} noSelect`}
+            href="/"
+          >
+            <strong>Home</strong>
+          </Link>
+          <br></br>
           <Link className={`${styles.menu_link} noSelect`} href="/projects">
             <strong>Projects</strong>
           </Link>
