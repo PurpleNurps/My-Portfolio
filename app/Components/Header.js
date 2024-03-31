@@ -75,7 +75,7 @@ export default function Header({ theme }) {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 200,
         },
         opacity: {
           value: 1,
