@@ -17,7 +17,12 @@ export default function Home() {
 
   return (
     <>
-      <NavBar theme={theme} setTheme={setTheme} isChecked={isChecked} setIsChecked={setIsChecked} />
+      <NavBar
+        theme={theme}
+        setTheme={setTheme}
+        isChecked={isChecked}
+        setIsChecked={setIsChecked}
+      />
       <Header theme={theme} />
       <Bio />
       <TechStack />

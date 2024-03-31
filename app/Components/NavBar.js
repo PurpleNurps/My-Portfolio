@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 
 
-export default function NavBar({theme, setTheme, isChecked, setIsChecked}) {
+export default function NavBar({ theme, setTheme, isChecked, setIsChecked }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function LinkedInImage() {
