@@ -1,0 +1,22 @@
+{
+   "cards": [
+        {
+            "title": "Menstruation Cycle Tracker",
+            "image": "",
+            "desc": "A charity project I am volunteering on in collaboration with a team a fellow bootcambers. Designing and building an app for tracking period cycles with some added features which are missing from the existing cycle trackers.",
+            "techOne": "React Native",
+            "techTwo": "Expo",
+            "techThree": "Supabase"
+        },
+        {
+            "title": "Robo Chef",
+            "image": "",
+            "desc": "A React component that takes in ingredients and generates a recipe using AI.",
+            "techOne": "React",
+            "techTwo": "Chakra UI",
+            "techThree": "OpenAI",
+            "gitHubLink": "www.google.com",
+            "siteLink": "www.notgoogle.com"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+.header {
+    margin-top: 100PX;
+    padding: 20px;
+}
+
+.card_container {
+    display: flex;
+    justify-content: center;
+}
+
+.single_card {
+    background-color: #2D4552;
+    /* background-image: url("/white-blob-logo-PNG-01.png"); */
+    display: flex;
+    height: 20rem;
+    width: 90vw;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem;
+    
+    
+}
+
+.card_background {
+    background-image: url("/white-blob-logo-PNG-01.png");
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+}
